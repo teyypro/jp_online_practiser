@@ -1,9 +1,12 @@
 {
   "name": "practisegenerator",
+  "homepage": "https://teyypro.github.io/512kanjilookandlearnfilter",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
@@ -12,6 +15,7 @@
   "dependencies": {
     "@openrouter/sdk": "^0.9.11",
     "@supabase/supabase-js": "^2.99.3",
+    "gh-pages": "^6.3.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-router-dom": "^7.13.1"

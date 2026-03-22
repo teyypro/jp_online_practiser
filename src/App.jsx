@@ -6,7 +6,7 @@ import ExerciseList from './Components/ExcerciseList/ExcerciseList';
 import ExerciseDetail from './Components/ExcerciseList/ExerciseDetail';
 function App() {
   return (
-    <BrowserRouter basename=''>
+    <BrowserRouter basename='jp_online_practiser'>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/create' element={<CreatePage/>}/>

@@ -1,0 +1,92 @@
+/* Nút Nộp bài lớn ở cuối trang */
+.submitBtnBig {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background-color: var(--text-h); /* Màu đen hoặc đậm để tạo sự nghiêm túc */
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submitBtnBig:hover {
+  background-color: var(--accent); /* Chuyển tím khi hover */
+  transform: scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.submitBtnBig:active {
+  transform: scale(0.98);
+}
+
+/* Bảng kết quả sau khi nộp bài */
+.resultPanel {
+  margin-top: 40px;
+  padding: 40px;
+  background-color: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  animation: slideUp 0.5s ease-out;
+}
+
+.resultPanel h2 {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+/* Màu sắc cho điểm số */
+.green {
+  color: #10b981; /* Xanh lá cho điểm cao */
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.red {
+  color: #ef4444; /* Đỏ cho điểm thấp */
+  font-size: 40px;
+  font-weight: 800;
+}
+
+/* Layout nút bấm trong bảng kết quả */
+.resultPanel .btnPrimary, 
+.resultPanel .btnSecondary {
+    margin: 8px;
+    min-width: 150px;
+    padding: 10px;
+}
+
+/* Hiệu ứng xuất hiện mượt mà cho bảng kết quả */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .submitBtnBig {
+    width: 90%;
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  .resultPanel {
+    padding: 24px 16px;
+    margin: 20px 10px;
+  }
+}

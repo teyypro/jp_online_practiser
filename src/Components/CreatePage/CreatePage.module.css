@@ -1,0 +1,146 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- TASKBAR (Thanh công cụ cố định) --- */
+.taskbar {
+  position: sticky;
+  top: 10px;
+  z-index: 100;
+  background-color: var(--bg);
+  padding: 16px 24px;
+  border: 0;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  box-shadow: var(--shadow);
+
+}
+
+.taskbar input[type="text"] {
+  flex: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  font-size: 20px;
+  font-family: var(--sans);
+  background: transparent;
+  transition: all 0.2s;
+  color: var(--text);
+  font-weight: bold;
+}
+
+.taskbar input[type="text"]:focus {
+  outline: none;
+}
+
+.taskbarButtons {
+  display: flex;
+  gap: 12px;
+}
+
+/* --- BUTTONS --- */
+.taskbar button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.taskbar button:hover:not(:disabled) {
+  background: var(--code-bg);
+  transform: translateY(-2px);
+}
+
+.publishBtn {
+  background-color: var(--accent) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.publishBtn:hover:not(:disabled) {
+  opacity: 0.9;
+  box-shadow: 0 4px 12px var(--accent-bg);
+}
+
+.publishBtn:disabled {
+  background-color: var(--border) !important;
+  cursor: not-allowed;
+}
+
+/* --- ALERTS (Thông báo) --- */
+.errorAlert, .successAlert {
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 10px;
+  animation: slideIn 0.3s ease-out;
+}
+
+.errorAlert {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+.successAlert {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+/* --- CONTENT AREA --- */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 100px; /* Tạo khoảng trống cuối trang */
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .taskbar {
+    flex-direction: column;
+    padding: 16px;
+  }
+  
+  .taskbarButtons {
+    width: 100%;
+  }
+  
+  .taskbarButtons button {
+    flex: 1;
+  }
+
+  .taskbar input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .container {
+        position: absolute;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

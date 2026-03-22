@@ -1,0 +1,157 @@
+.containerMondai {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+/* --- TASKBAR TRONG MỖI MONDAI --- */
+.taskbarMondai {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.taskbarMondai h2 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--accent);
+  min-width: 120px;
+}
+
+.promptoption {
+    display: grid;
+    flex-direction: row;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+}
+
+.status {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.formatted { background: #d1fae5; color: #065f46; }
+.unformatted { background: #f3f4f6; color: #6b7280; }
+
+/* --- SELECTOR & BUTTONS --- */
+.typeSelector {
+    display: flex;
+    gap: 8px;
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text-h);
+    outline: none;
+    min-width: 200px;
+    position: relative;
+    flex: 1;
+    width: 100%;
+}
+
+.select:focus { border-color: var(--accent); }
+
+/* Button Styles */
+.btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+  font-family: var(--sans);
+}
+
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btnSuccess { background: #10b981; color: white; }
+.btnWarning { background: #f59e0b; color: white; }
+.btnDanger { background: #fee2e2; color: #ef4444; border-color: #fecaca; margin-left: auto; }
+
+.btn:hover:not(:disabled) { transform: translateY(-1px); filter: brightness(0.95); }
+.btnCopy {
+  background-color: #000;
+}
+/* --- TEXTAREA & CONTENT --- */
+.containerContent {
+  width: 100%;
+}
+
+.textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.6;
+  background: var(--code-bg);
+  color: var(--text-h);
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--accent-border);
+  background: var(--bg);
+}
+
+.textarea:disabled {
+  background: #f9fafb;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* --- ERROR & PREVIEW --- */
+.error {
+  margin-top: 12px;
+  padding: 12px;
+  background: #fef2f2;
+  border-radius: 6px;
+  color: #b91c1c;
+  font-size: 14px;
+}
+
+.preview {
+  margin-top: 16px;
+  padding: 16px;
+  background: #1e1e1e; /* Dark theme cho code preview */
+  color: #d4d4d4;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.pre {
+  margin: 8px 0 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-family: var(--mono);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .taskbarMondai { flex-direction: column; align-items: flex-start; }
+  .typeSelector { width: 100%; }
+  .btnDanger { margin-left: 0; width: 100%; }
+}

@@ -1,0 +1,143 @@
+.container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 2rem 10rem;
+    min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: var(--text-h);
+}
+
+/* Nút làm mới */
+.refreshBtn {
+  background-color: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.refreshBtn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.refreshBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* Card Style */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-border);
+  box-shadow: rgba(170, 59, 255, 0.1) 0px 10px 20px;
+}
+
+.cardTitle {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  color: var(--text-h);
+  line-height: 1.4;
+}
+
+.cardInfo {
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.cardInfo p {
+  margin: 4px 0;
+}
+
+.cardInfo strong {
+  color: var(--text-h);
+}
+
+/* Nút xem chi tiết */
+.viewBtn {
+  margin-top: auto;
+  text-decoration: none;
+  background-color: var(--accent-bg);
+  color: var(--accent);
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  border: 1px solid var(--accent-border);
+  transition: all 0.2s;
+}
+
+.viewBtn:hover {
+  background-color: var(--accent);
+  color: white;
+}
+
+/* States */
+.loading, .empty, .error {
+  padding: 60px;
+  text-align: center;
+  background: var(--code-bg);
+  border-radius: 12px;
+  color: var(--text);
+  font-family: var(--mono);
+}
+
+.error {
+  color: #e63946;
+  border: 1px solid rgba(230, 57, 70, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .container {
+           padding: 1rem;
+  }
+}

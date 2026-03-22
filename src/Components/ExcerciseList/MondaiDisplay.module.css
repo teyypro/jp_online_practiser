@@ -1,0 +1,209 @@
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* --- MONDAI SECTION --- */
+.mondaiSection {
+  background: var(--bg);
+  border-radius: 0.5rem;
+  margin-bottom: 32px;
+  overflow: hidden;
+
+}
+
+.mondaiTitle {
+  background: var(--code-bg);
+  padding: 16px 24px;
+  margin: 0;
+  font-size: 18px;
+  border-bottom: 1px solid var(--border);
+  color: var(--accent);
+  text-align: left;
+}
+
+.mondaiBody {
+  padding: 24px;
+}
+
+/* --- PASSAGE (Bài đọc) --- */
+.mainPassage, .passageText {
+    color: black;
+    padding: 0;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    line-height: 1.8;
+    text-align: left;
+    white-space: pre-wrap;
+    font-size: 17px;
+  
+}
+
+/* --- QUESTION CONTAINER --- */
+.questionContainer {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px dashed var(--border);
+  text-align: left;
+}
+
+.questionContainer:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.questionText {
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--text-h);
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: var(--jp_font);
+}
+
+.qNumber {
+  color: var(--accent);
+  margin-right: 8px;
+  font-weight: 700;
+}
+
+/* --- OPTIONS GRID --- */
+.optionsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.optionItem {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.5rem;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: var(--bg);
+    font-size: var(--jp_font);
+}
+
+.optionItem:hover {
+  border-color: var(--accent-border);
+  background: var(--accent-bg);
+}
+
+.optKey {
+  font-weight: 600;
+  margin-right: 10px;
+  color: var(--text);
+}
+
+/* Trạng thái Option */
+.selected {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.correct {
+  background-color: #dcfce7 !important; /* Xanh lá nhạt */
+  border-color: #22c55e !important;
+  color: #166534;
+}
+
+.wrong {
+  background-color: #fee2e2 !important; /* Đỏ nhạt */
+  border-color: #ef4444 !important;
+  color: #991b1b;
+}
+
+/* --- FURIGANA & STAR --- */
+.ruby {
+    ruby-align: center;
+    padding-inline: 0.2rem;
+}
+
+.furigana {
+    font-size: 10px;
+    color: var(--text);
+    user-select: none;
+    margin-bottom: 0rem;
+}
+
+.starMarker {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 0 4px;
+}
+
+/* --- FEEDBACK BOX --- */
+.feedbackBox {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  animation: fadeIn 0.3s ease;
+}
+
+.bgCorrect { background: #f0fdf4; border: 1px solid #bbf7d0; }
+.bgWrong { background: #fef2f2; border: 1px solid #fecaca; }
+
+.statusRow {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.explanation {
+  margin-top: 8px;
+  padding-top: 8px;
+  font-style: italic;
+  color: var(--text);
+}
+
+/* --- CUSTOM RADIO --- */
+.customRadio {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.selected .customRadio { border-color: var(--accent); }
+
+.radioDot {
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.optValue {
+  color: var(--text-h);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .optionsGrid { grid-template-columns: 1fr; gap: 0.2rem; }
+  .mondaiBody { padding-inline: 0px; border-radius: 0;}
+  .questionText { font-size: 20px; margin:0; margin-top: 0.5rem;}
+  .questionContainer {
+    padding:0;
+    margin:0;
+    border:0;
+  }
+  .customRadio {
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--text);
+  }
+}

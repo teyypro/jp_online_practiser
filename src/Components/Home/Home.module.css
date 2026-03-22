@@ -1,0 +1,50 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.containerOption {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    flex-direction: column;
+}
+
+.option {
+  text-decoration: none;
+  color: #2d3436;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 3rem 2rem;
+  width: 200px;
+  text-align: center;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.option:hover {
+  transform: translateY(-10px);
+  background: #ffffff;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  color: #000000;
+}
+
+/* Optional: Different colors for each card */
+.option:first-child:hover {
+  border-bottom: 5px solid #000000; /* Green for Create */
+}
+
+.option:last-child:hover {
+  border-bottom: 5px solid #000000; /* Blue for List */
+}

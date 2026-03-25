@@ -206,4 +206,8 @@
   height: 15px;
   border: 1px solid var(--text);
   }
+  .mondaiTitle {
+        background: transparent;
+    padding-inline: 0;
+  }
 }

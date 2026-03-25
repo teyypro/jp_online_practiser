@@ -19,7 +19,7 @@ const mondai_title = {
   3: "Tùy theo mạch văn, tìm từ phù hợp về mặt ngữ nghĩa, ngữ pháp, trợ từ： ( )に何を入れますか。ABCDから いちばんいいものをひとつえらんでください。",
   4: "Tìm cách diễn đạt / từ gần nghĩa với từ đã cho：______のぶんとだいたいおなじいみのぶんがあります。ABCDから いちばんいいものをひとつえらんでください。",
   5: "Tạo câu mạch lạc, đúng cú pháp vào chỗ ★：★に入るものはどれですか。ABCDからいちばんいいものを一つえらんでください。",
-  6: "Phân đoạn câu phù hợp với dòng chảy văn bản：______に何を入れますか。ABCDからいちばんいいものを一つえらんでください。",
+  6: "Phân đoạn câu phù hợp với dòng chảy văn bản để hoàn thành đoạn văn bản đọc hiểu：______に何を入れますか。ABCDからいちばんいいものを一つえらんでください。",
   7: "Đọc hiểu Đúng / Sai：文章を読んで、正しいものに○、間違っているものに×をつけてください。",
   8: "Đọc hiểu 4 câu hỏi đoạn văn：文章を読んで、質問に答えてください。答えはABCDからいちばんいいものを一つえらんでください。",
 };

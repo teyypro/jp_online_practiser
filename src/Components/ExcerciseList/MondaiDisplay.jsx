@@ -163,7 +163,7 @@ export default function MondaiDisplay({
     <div className={styles.wrapper}>
       {mondais.map((mondai, mIdx) => (
         <div key={mIdx} className={styles.mondaiSection}>
-          <h3 className={styles.mondaiTitle}>{renderContent(mondai.mondai_title)}</h3>
+          <h3 className={styles.mondaiTitle}>Mondai {mIdx+1}: {renderContent(mondai.mondai_title)}</h3>
           
           {/* Logic phân tách 8 trường hợp nhưng dùng chung renderQuestion cho gọn */}
           <div className={styles.mondaiBody}>

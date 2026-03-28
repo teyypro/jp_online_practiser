@@ -77,10 +77,7 @@ export default function MondaiDisplay({
 
   const getReadingOnly = (text) => {
     if (!text || typeof text !== 'string') return '';
-    return text
-      .replace(/<[^>]+>\{([^}]+)\}/g, '$1')
-      .replace(/[^\u3040-\u309F\s]/g, '')
-      .replace(/\s+/g, '') || text;
+    return text.replace(/<[^>]+>\{([^}]+)\}/g, '$1');
   };
 
   const speakText = useCallback((text) => {

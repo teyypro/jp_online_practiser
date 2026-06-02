@@ -80,6 +80,25 @@ export default function MondaiDisplay({
     return text.replace(/<[^>]+>\{([^}]+)\}/g, '$1');
   };
 
+  // Hàm xử lý chèn đáp án vào dấu ngoặc CHỈ KHI đã chọn đáp án
+  const getQuestionTextWithAnswer = (q, qKey) => {
+    let questionText = q.question || '';
+    if (!questionText || typeof questionText !== 'string') return '';
+
+    let cleanQuestion = getReadingOnly(questionText);
+    const bracketPattern = /\(\s*\)|（\s*）/;
+    const hasSelected = !!userAnswers[qKey];
+
+    if (hasSelected && bracketPattern.test(cleanQuestion)) {
+      const correctOptKey = q.answer;
+      const correctOptText = q.options?.[correctOptKey] || '';
+      const cleanAnswer = getReadingOnly(correctOptText);
+
+      return cleanQuestion.replace(bracketPattern, cleanAnswer);
+    }
+    return cleanQuestion;
+  };
+
   const speakText = useCallback((text) => {
     if (!synthRef.current || !text?.trim()) return;
     synthRef.current.cancel();
@@ -140,7 +159,7 @@ export default function MondaiDisplay({
         <div className={styles.questionText}>
           <span 
             className={styles.qNumber} 
-            onClick={() => speakText(getReadingOnly(q.question))} 
+            onClick={() => speakText(getQuestionTextWithAnswer(q, qKey))} 
             style={{ cursor: 'pointer' }}
           >
             Q.{id + 1}
@@ -162,7 +181,7 @@ export default function MondaiDisplay({
             }
 
             return (
-              <div key={optKey} className={optionCls}   onClick={() => speakText(getReadingOnly(optText))} >
+              <div key={optKey} className={optionCls} onClick={() => speakText(getReadingOnly(optText))} >
                 <div 
                   className={styles.customRadio} 
                   onClick={() => handleSelect(qKey, optKey)}
@@ -202,7 +221,7 @@ export default function MondaiDisplay({
 
   return (
     <div className={styles.wrapper}>
-      {/* Floating Toolbar - Giữ lại chức năng đọc khi chọn text */}
+      {/* Floating Toolbar */}
       {showToolbar && (
         <div 
           ref={toolbarRef} 
